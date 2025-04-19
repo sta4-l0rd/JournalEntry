@@ -2,11 +2,14 @@ package com.sta4l0rd.journalApp.controller;
 
 import com.sta4l0rd.journalApp.entity.JournalEntry;
 import com.sta4l0rd.journalApp.service.JournalEntryService;
+import com.sta4l0rd.journalApp.service.UserService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/journal/v2")
@@ -15,9 +18,22 @@ public class JournalEntryControllerV2 {
     @Autowired
     private JournalEntryService journalEntryService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping
     public ResponseEntity<?> getAllEntries() {
         return new ResponseEntity<>(journalEntryService.getAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/user/{userName}")
+    public ResponseEntity<?> getAllEnteriesOfUser(@PathVariable String userName){
+        List<JournalEntry> entries = userService.getAllJournalEntries(userName);
+        if(entries != null){
+            return new ResponseEntity<>(entries, HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping
