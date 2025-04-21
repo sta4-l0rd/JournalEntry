@@ -1,6 +1,7 @@
 package com.sta4l0rd.journalApp.entity;
 
 import org.bson.types.ObjectId;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,9 +13,7 @@ public class JournalEntry {
     @Id
     private ObjectId id;
 
-    @lombok.NonNull
     private String title;
-
     private String content;
     private LocalDateTime dateTime;
 }

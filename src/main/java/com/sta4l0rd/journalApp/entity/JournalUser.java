@@ -10,7 +10,7 @@ import java.util.List;
 
 @Document(collection = "users")
 @lombok.Data
-public class User {
+public class JournalUser {
     @Id
     private ObjectId id;
 
