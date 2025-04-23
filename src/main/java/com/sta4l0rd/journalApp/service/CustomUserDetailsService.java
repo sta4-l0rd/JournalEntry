@@ -3,7 +3,6 @@ package com.sta4l0rd.journalApp.service;
 import com.sta4l0rd.journalApp.entity.JournalUser;
 import com.sta4l0rd.journalApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
