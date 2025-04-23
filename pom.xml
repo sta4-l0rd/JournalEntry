@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sta4l0rd</groupId>
 	<artifactId>journalApp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<name>Journal App</name>
 	<description>E2EE Jouraling Application</description>
 	<url/>
